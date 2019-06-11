@@ -18,7 +18,7 @@ if (isset($_POST['signup__form--submit'])) {
     $stmt->bindValue(':id', $id);
     $stmt->bindValue(':passwd', $passwd);
 
-    #TODO: id重複の際のSQLでのエラーメッセージの確認
+    //TODO: id重複の際のSQLでのエラーメッセージの確認
     try {
         $stmt->execute();
         //メッセージ代入

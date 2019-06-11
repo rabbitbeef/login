@@ -7,10 +7,11 @@ session_start();
 //ログインチェック
 if(isset($_SESSION['name'])){
 $id = $_SESSION['name'];
+$msg .= "ログイン成功です。$id さん";
 }
 //失敗のときはエラー
 else{
-$msg .= '';
+$msg .= '直接URLから入らないでください。';
 }
 ?>
 <!DOCTYPE html>
@@ -20,7 +21,11 @@ $msg .= '';
         <title>main</title>
     </head>
     <body>
-        ログイン成功です。
-        <?= $id?>
+        <article>
+        <?= $msg?>
+        </article>
+        <article>
+        <a href ='logout.php'>logout</a>
+        </article>
     </body>
 </html>
